@@ -11,7 +11,6 @@ try:
     epd = epd5in83b.EPD()
     epd.init()
     print("Clear...")
-    epd.Clear(0xFF)
     # Drawing on the Horizontal image
    # HBlackimage = Image.new('1', (epd5in83b.EPD_WIDTH, epd5in83b.EPD_HEIGHT), 255)  # 298*126
    # HRedimage = Image.new('1', (epd5in83b.EPD_WIDTH, epd5in83b.EPD_HEIGHT), 255)  # 298*126    
@@ -21,7 +20,7 @@ try:
     print("read bmp file on window")
     blackimage1 = Image.new('1', (epd5in83b.EPD_HEIGHT, epd5in83b.EPD_WIDTH), 255)  # 298*126
     redimage1 = Image.new('1', (epd5in83b.EPD_HEIGHT, epd5in83b.EPD_WIDTH), 255)  # 298*126    
-    newimage = Image.open('marv.bmp') # 이미지파일을 여기에등록만하기
+    newimage = Image.open('hot.png') # 이미지파일을 여기에등록만하기
     blackimage1.paste(newimage, (50,10))
     epd.display(epd.getbuffer(blackimage1), epd.getbuffer(redimage1))
     
